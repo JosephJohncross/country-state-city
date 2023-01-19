@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const port = process.env.PORT || 3001
 
 let Country = require('country-state-city').Country;
 let State = require('country-state-city').State;
@@ -58,6 +59,6 @@ app.get('/cities/:stateCode/:countryCode', (req, res) => {
 })
 
 // starting the server
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log('listening on port 3001');
 });
